@@ -3,7 +3,6 @@ package ru.netology.stats;
 public class StatsService {
 
 
-
     public long sumSales(long[] sales) {           // сумма всех продаж
         long sum = 0;
         for (long sale : sales) {
@@ -44,18 +43,14 @@ public class StatsService {
     public int monthsBelowAverage(long[] sales) {   // количество меньше среднего
         int average = averageSales(sales);
         int count = 0;
-        for (long sale : sales)
-        {
-            int sale;
-            for (long sale : sales) {
-            if (sale < average) {
-                count++;
+        for (long sale : sales) {
+                if (sale < average) {
+                    count++;
+                }
             }
+            return count;
         }
-        return count;
-    }
-
-    public int monthsAboveAverage(long[] sales) {
+        public int monthsAboveAverage(long[] sales) { // количество больше среднего
             int average = averageSales(sales);
             int count = 0;
             for (long sale : sales) {
@@ -64,7 +59,9 @@ public class StatsService {
                 }
             }
             return count;
-        }
-
-
+    }
 }
+
+
+
+
