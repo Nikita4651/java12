@@ -7,10 +7,10 @@ public class StatsServiceTest {
 
     @Test
 
-public void shouldCalculateSumSales() {
+    public void shouldCalculateSumSales() {
 
         StatsService service = new StatsService();
-                long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
 
         long expected = 180;
@@ -21,13 +21,13 @@ public void shouldCalculateSumSales() {
     }
 
     @Test
-   public void shouldFindMaxSalesMonth() {
+    public void shouldFindMaxSalesMonth() {
 
         StatsService service = new StatsService();
 
         long expected = 9;
 
-         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long actual = service.maxSales(sales);
         Assertions.assertEquals(expected, actual);
     }
@@ -66,5 +66,16 @@ public void shouldCalculateSumSales() {
 
         int actual = service.monthsAboveAverage(sales);
         Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldCalculateAverageSales() {
+
+        StatsService service = new StatsService();
+
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expected = 15;
+        int actual = service.averageSales(sales);
+        Assertions.assertEquals(expected, actual, 1);
     }
 }

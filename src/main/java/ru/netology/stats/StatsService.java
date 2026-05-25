@@ -44,21 +44,22 @@ public class StatsService {
         int average = averageSales(sales);
         int count = 0;
         for (long sale : sales) {
-                if (sale < average) {
-                    count++;
-                }
+            if (sale < average) {
+                count++;
             }
-            return count;
         }
-        public int monthsAboveAverage(long[] sales) { // количество больше среднего
-            int average = averageSales(sales);
-            int count = 0;
-            for (long sale : sales) {
-                if (sale > average) {
-                    count++;
-                }
+        return count;
+    }
+
+    public int monthsAboveAverage(long[] sales) { // количество больше среднего
+        int average = averageSales(sales);
+        int count = 0;
+        for (long sale : sales) {
+            if (sale > average) {
+                count++;
             }
-            return count;
+        }
+        return count;
     }
 }
 
